@@ -25,7 +25,7 @@ if userPass == site_pass:
     result="success"
 else:
     result="fail"
-
+cursor.close()
 db.close()
 
 print "Content-type:text/html"
