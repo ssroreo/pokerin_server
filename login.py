@@ -46,6 +46,6 @@ print "<meta charset=\"utf-8\">"
 print "<title>菜鸟教程 CGI 测试实例</title>"
 print "</head>"
 print "<body>"
-print "<h2>%s%s</h2>" % (result)
+print "<h2>%s</h2>" % (result)
 print "</body>"
 print "</html>"
