@@ -10,7 +10,7 @@ db = MySQLdb.connect("106.12.95.107", "PokerinDB", "root", "123456", charset='ut
 cursor = db.cursor()
 
 # SQL 查询语句
-sql = "SELECT * FROM UserInfo"
+sql = "SELECT userPass FROM UserInfo"
 try:
    # 执行SQL语句
    cursor.execute(sql)

@@ -11,20 +11,30 @@ form = cgi.FieldStorage()
 site_name = form.getvalue('logname')
 site_pass  = form.getvalue('logpass')
 
-db = MySQLdb.connect("localhost","root","123456","PokerinDB",charset="utf-8")
+# 打开数据库连接
+db = MySQLdb.connect("localhost", "root", "123456", "PokerinDB", charset='utf8' )
 
+# 使用cursor()方法获取操作游标 
 cursor = db.cursor()
 
-sql="select userPass from UserInfo where userName='%s'" % (site_name)
-
-cursor.execute(sql)
-
-userPass = cursor.fetchone()
+# SQL 查询语句
+sql = "SELECT userPass FROM UserInfo where userName='%s'" % (site_name)
+try:
+   # 执行SQL语句
+   cursor.execute(sql)
+   # 获取所有记录列表
+   results = cursor.fetchall()
+   for row in results:
+      userPass = row[0]
+except:
+   userPass = ""
 
 if userPass == site_pass:
     result="success"
 else:
     result="fail"
+
+# 关闭数据库连接
 cursor.close()
 db.close()
 
