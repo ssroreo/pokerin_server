@@ -24,7 +24,7 @@ try:
    cursor.execute(sql)
    # 获取所有记录列表
    results = cursor.fetchall()
-   if results.hasNext():
+   if results!= None:
        for row in results:
            userPass = row[0]
 
