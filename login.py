@@ -16,7 +16,7 @@ db = MySQLdb.connect("localhost", "root", "123456", "PokerinDB", charset='utf8' 
 
 # 使用cursor()方法获取操作游标 
 cursor = db.cursor()
-
+results = ""
 # SQL 查询语句
 sql = "SELECT userPass FROM UserInfo where userName='%s'" % (site_name)
 try:
@@ -24,8 +24,9 @@ try:
    cursor.execute(sql)
    # 获取所有记录列表
    results = cursor.fetchall()
-   for row in results:
-      userPass = row[0]
+   if results != "":
+    for row in results:
+        userPass = row[0]
 except:
    userPass = ""
 
