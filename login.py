@@ -32,9 +32,9 @@ except:
    userPass = ""
 
 if userPass == site_pass:
-    result="success"
+    result="index"
 else:
-    result="fail"
+    result="login"
 
 # 关闭数据库连接
 cursor.close()
@@ -45,9 +45,9 @@ print
 print "<html>"
 print "<head>"
 print "<meta charset=\"utf-8\">"
-print "<title>菜鸟教程 CGI 测试实例</title>"
+print "<meta http-equiv=\"refresh\" content=\"0;url=%s.html\">" % (result)
+print "<title></title>"
 print "</head>"
 print "<body>"
-print "<h2>%s</h2>" % (result)
 print "</body>"
 print "</html>"
