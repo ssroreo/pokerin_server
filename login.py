@@ -45,7 +45,7 @@ print
 print "<html>"
 print "<head>"
 print "<meta charset=\"utf-8\">"
-print "<meta http-equiv=\"refresh\" content=\"0;url=%s.html\">" % (result)
+print "<meta http-equiv=\"refresh\" content=\"0;url=../%s.html\">" % (result)
 print "<title></title>"
 print "</head>"
 print "<body>"
